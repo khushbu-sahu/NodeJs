@@ -1,4 +1,3 @@
-
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 function App() {
@@ -9,15 +8,15 @@ function App() {
       .then((response) => {
         setJokes(response.data)
       })
-      .catch((error) => {
+      .catch((error) => { 
         console.log(error)
-      },[])
+      })
 
   })
   return (
     <>
       <h1>Hello Nodejs</h1>
-      <p>JOKES : {jokes.length}</p>
+      <p>JOKES :{jokes.length}</p>
       {
         jokes.map((joke, index) => (
           <div key={joke.id}>
@@ -25,9 +24,8 @@ function App() {
             <p>{joke.content}</p>
           </div>
         ))
-        }
+      }
     </>
   )
 }
-
 export default App
